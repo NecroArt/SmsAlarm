@@ -9,15 +9,18 @@
     tools:context=".MainActivity" >
 
     <Button
+        android:id="@+id/btnPlay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="startPlay"
         android:text="@string/start_play" />
     
     <Button
+        android:id="@+id/btnStop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="stopPlay"
-        android:text="@string/stop_play" />
+        android:text="@string/stop_play"
+        android:layout_below="@+id/btnPlay" />
 
 </RelativeLayout>

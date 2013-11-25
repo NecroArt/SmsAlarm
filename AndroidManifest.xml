@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.smsalarm"
     android:versionCode="0"
-    android:versionName="0.001" >
+    android:versionName="0.002" >
 
     <uses-permission android:name="android.permission.READ_SMS"/>
     <uses-sdk
