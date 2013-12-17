@@ -1,16 +1,19 @@
 package com.smsalarm;
 
 import android.app.Activity;
+import android.app.Service;
+import android.content.Intent;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.Menu;
+import android.os.IBinder;
 import android.view.View;
 
 public class MainActivity extends Activity {
 
-	private Ringtone r = null;
+	public static final String TELEPHONE_NUMBER = "000019";
+	private static Ringtone r = null;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -32,21 +35,47 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 	}
 
-	@Override
+	/*@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
+		Notification notification=new Notification(android.R.drawable.ic_btn_speak_now,"hi",100);
+		notification.sound = Uri.parse("android.resource://" + getPackageName() + "/" R.raw.notifysnd);
+		notification.defaults = Notification.DEFAULT_LIGHTS | Notification.DEFAULT_VIBRATE;
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
-	}
+	}*/
 
-	public void startPlay(View view) {
+	public static void startPlay(View view) {
 		
 		r.play();
 	}
 	
-	public void stopPlay(View view) {
+	public static void startPlay() {
+		
+		r.play();
+	}
+	
+	public static void stopPlay(View view) {
 		
 		r.stop();
+	}
+	
+	public static void stopPlay() {
+		
+		r.stop();
+	}
+	
+	public static void registerService(View view) {
+		надо это доделать
+		Service s = new Service() {
+			
+			@Override
+			public IBinder onBind(Intent intent) {
+				// TODO Auto-generated method stub
+				return null;
+			}
+		}; 
+		s.startForeground(1, null);
 	}
 
 }
